@@ -6,6 +6,7 @@ import NavBar from "./NavBar"
 import MyMemes from "./MyMemes"
 import Directions from "./Directions"
 import Home from "./Home"
+import Footer from "./Footer.js"
 
 function App() {
   const [memes, setMemes] = useState([])
@@ -40,6 +41,7 @@ function App() {
       </Switch>
 
       <MemeContainer memes={filteredMemeTitles} />
+      <Footer />
     </div>
   )
 }
