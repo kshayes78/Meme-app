@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom";
-import Search from "./Search";
-import MemeContainer from "./MemeContainer";
-import NavBar from "./NavBar";
-import MyMemes from "./MyMemes";
-import Directions from "./Directions";
-import MemeForm from "./MemeForm";
+import React, { useState, useEffect } from "react"
+import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom"
+import Search from "./Search"
+import MemeContainer from "./MemeContainer"
+import NavBar from "./NavBar"
+import MyMemes from "./MyMemes"
+import Directions from "./Directions"
+import MemeForm from "./MemeForm"
 
-import Footer from "./Footer.js";
+import Footer from "./Footer.js"
 
 function App() {
-  const [memes, setMemes] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [memes, setMemes] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   const filteredMemeTitles = memes.filter((meme) =>
     meme.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
-      .then((response) => setMemes(response.data.memes));
-  }, []);
+      .then((response) => setMemes(response.data.memes))
+  }, [])
 
   function openForm(id) {
-    return;
+    return
+  }
+
+  function hello() {
+    console.log("hello")
   }
 
   return (
@@ -44,7 +48,7 @@ function App() {
             <MyMemes />
           </Route>
           <Route exact path="/">
-            <MemeContainer memes={filteredMemeTitles} />
+            <MemeContainer hello={hello} memes={filteredMemeTitles} />
             {/* <Home /> */}
           </Route>
           <Route path="/directions">
@@ -55,7 +59,7 @@ function App() {
 
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

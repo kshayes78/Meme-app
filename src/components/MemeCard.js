@@ -1,12 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
+import Popup from "./Popup"
 
-function MemeCard({ name, url, height, width, box_count }) {
+function MemeCard({ hello, name, url, height, width, box_count }) {
+  const [popUp, setPopUp] = useState(false)
 
+  function handleClick() {
+    setPopUp((popUp) => !popUp)
+  }
 
   return (
-    <div>
+    <div onClick={handleClick}>
       <h3>{name}</h3>
-      <img src={url} alt={name} onClick = {handleClick}/>
+      <img height="100px" width="100px" src={url} alt={name} />
+
+      {popUp ? <Popup /> : null}
     </div>
   )
 }

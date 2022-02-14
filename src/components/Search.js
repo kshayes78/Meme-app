@@ -3,7 +3,7 @@ import React from "react"
 function Search({ searchTerm, setSearchTerm }) {
   return (
     <div>
-      <label htmlfor="search">Search Meme By Title</label>
+      <label htmlFor="search">Search Meme By Title</label>
       <input
         type="text"
         id="search"
