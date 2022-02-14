@@ -1,12 +1,11 @@
-import React from "react"
+import React from "react";
 
 function Directions() {
   return (
     <div>
-      Directions
-      <h1>Hello from Directions </h1>
+      <h1>Directions</h1>
     </div>
-  )
+  );
 }
 
-export default Directions
+export default Directions;
