@@ -1,7 +1,18 @@
-import React from "react";
+import React from "react"
 
-function Search() {
-  return <div>Search</div>;
+function Search({ searchTerm, setSearchTerm }) {
+  return (
+    <div>
+      <label htmlfor="search">Search Meme By Title</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="E.g. Condescending Wonka..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
+  )
 }
 
-export default Search;
+export default Search
