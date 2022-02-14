@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Popup from "./Popup"
+import Popup from "./PopUp"
 
 function MemeCard({ hello, name, url, height, width, box_count }) {
   const [popUp, setPopUp] = useState(false)
