@@ -1,28 +1,46 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-function MemeForm({ memes }) {
-  const [topText, setTopText] = useState("");
-  const [bottomText, setBottomText] = useState("");
+function MemeForm({ url, memes }) {
+  const [topText, setTopText] = useState("")
+  const [bottomText, setBottomText] = useState("")
+
+  const myMemeObj = {
+    name: url,
+    topText: topText,
+    bottomText: bottomText,
+  }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    console.log("Hi there!");
+    e.preventDefault()
+
+    fetch("http://localhost:6001/MyMemes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(myMemeObj),
+    }).then((response) => response.json())
   }
 
   return (
     <div>
       <h3>Add a Meme!</h3>
       <form onSubmit={handleSubmit}>
-        <label>Add Top Caption</label>
-        <input value={topText} onChange={(e) => setTopText(e.target.value)} />
-        <label>Add Bottom Caption</label>
+        <img height="100px" width="100px" src={url} />
+        {/* <label>Add Top Caption</label> */}
         <input
+          placeholder="Add Top Caption"
+          value={topText}
+          onChange={(e) => setTopText(e.target.value)}
+        />
+        {/* <label>Add Bottom Caption</label> */}
+        <input
+          placeholder="Add Bottom Caption"
           value={bottomText}
           onChange={(e) => setBottomText(e.target.value)}
         />
+        <input type="submit" value="Generate Meme" />
       </form>
     </div>
-  );
+  )
 }
 
-export default MemeForm;
+export default MemeForm

@@ -18,7 +18,7 @@ function App() {
   )
 
   useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes/")
+    fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
       .then((response) => setMemes(response.data.memes))
   }, [])
@@ -33,8 +33,7 @@ function App() {
 
   return (
     <div>
-      <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-      <MemeForm memes={memes} />
+      {/* <MemeForm memes={memes} /> */}
       <BrowserRouter>
         <nav>
           <NavLink exact to="/">
@@ -48,6 +47,7 @@ function App() {
             <MyMemes />
           </Route>
           <Route exact path="/">
+            <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
             <MemeContainer hello={hello} memes={filteredMemeTitles} />
             {/* <Home /> */}
           </Route>

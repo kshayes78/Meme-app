@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "MyMemes": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "https://i.imgflip.com/30b1gx.jpg",
+      "topText": "a",
+      "bottomText": "b",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "https://i.imgflip.com/30b1gx.jpg",
+      "topText": "c",
+      "bottomText": "c",
+      "id": 2
+    },
+    {
+      "name": "https://i.imgflip.com/30b1gx.jpg",
+      "topText": "",
+      "bottomText": "",
+      "id": 3
+    },
+    {
+      "name": "https://i.imgflip.com/30b1gx.jpg",
+      "topText": "a",
+      "bottomText": "b",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
