@@ -12,7 +12,7 @@ import Footer from "./Footer.js"
 function App() {
   const [memes, setMemes] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
-  const [myMemes, setMyMemes] = useState([])
+  const [myMemesArray, setMyMemesArray] = useState([])
 
   const filteredMemeTitles = memes.filter((meme) =>
     meme.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -24,14 +24,8 @@ function App() {
       .then((response) => setMemes(response.data.memes))
   }, [])
 
-  useEffect(() => {
-    fetch("http://localhost:6001/NewMemes")
-      .then((response) => response.json())
-      .then(setMyMemes)
-  }, [])
-
   function addMemesToState(memeObj) {
-    setMyMemes([...myMemes, memeObj])
+    setMyMemesArray([...myMemesArray, memeObj])
   }
 
   return (
@@ -47,7 +41,10 @@ function App() {
         </nav>
         <Switch>
           <Route path="/mymemes">
-            <MyMemes myMemes={myMemes} />
+            <MyMemes
+              myMemesArray={myMemesArray}
+              setMyMemesArray={setMyMemesArray}
+            />
           </Route>
           <Route exact path="/">
             <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />

@@ -1,29 +1,58 @@
 import React, { useState } from "react"
 
-function MemeForm({ url, memes, name, handleClick, addMemesToState }) {
+function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
   const [topText, setTopText] = useState("")
   const [bottomText, setBottomText] = useState("")
 
-  const myMemeObj = {
-    name: name,
-    url: url,
-    topText: topText,
-    bottomText: bottomText,
+  const user = "nicolecandiotti"
+  const password = "ReactProject"
+
+  const objectToQueryParam = (obj) => {
+    const params = Object.entries(obj).map(([key, value]) => `${key}=${value}`)
+    return "?" + params.join(`&`)
   }
-  console.log(url)
+
+  // const myMemeObj = {
+  //   name: name,
+  //   url: url,
+  //   topText: { topText },
+  //   bottomText: { bottomText },
+  // }
 
   function handleSubmit(e) {
     e.preventDefault()
     handleClick()
     // addMemesToState(myMemeObj)
-    fetch("http://localhost:6001/NewMemes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(myMemeObj),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+    const params = {
+      template_id: id,
+      text0: topText,
+      text1: bottomText,
+      username: user,
+      password: password,
+    }
+    // console.log(objectToQueryParam(params))
+    fetch(
+      `https://api.imgflip.com/caption_image${objectToQueryParam(params)}`,
+      {
+        method: "POST",
+      }
+    )
+      .then((r) => r.json())
+      .then((data) => {
+        // send post request to json server
+        // name: name
+        // url: data.url
+      })
   }
+
+  //   fetch("http://localhost:6001/NewMemes", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(myMemeObj),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data))
+  // }
 
   return (
     <div>

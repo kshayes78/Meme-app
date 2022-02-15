@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import Popup from "./Popup";
+import React, { useState } from "react"
+import Popup from "./Popup"
 
 function MemeCard({
+  id,
   hello,
   name,
   url,
   height,
   width,
-  box_count,
   addMemesToState,
+  memes,
 }) {
-  const [popUp, setPopUp] = useState(false);
+  const [popUp, setPopUp] = useState(false)
 
   function handleClick() {
-    setPopUp((popUp) => !popUp);
+    setPopUp((popUp) => !popUp)
   }
 
   return (
@@ -23,14 +24,16 @@ function MemeCard({
 
       {popUp ? (
         <Popup
-        name={name}
+          name={name}
           url={url}
           handleClick={handleClick}
           addMemesToState={addMemesToState}
+          memes={memes}
+          id={id}
         />
       ) : null}
     </div>
-  );
+  )
 }
 
-export default MemeCard;
+export default MemeCard
