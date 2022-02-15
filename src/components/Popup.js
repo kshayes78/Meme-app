@@ -1,9 +1,10 @@
-import React from "react"
-import Popup from "reactjs-popup"
-import MemeForm from "./MemeForm"
-import styled from "styled-components"
+import React from "react";
+import Popup from "reactjs-popup";
+import MemeForm from "./MemeForm";
+import styled from "styled-components";
 
-export default ({ url }) => (
+// eslint-disable-next-line import/no-anonymous-default-export
+export default ({ url, name, handleClick, addMemesToState }) => (
   <Popup
     trigger={<button className="button"> Open Modal </button>}
     modal
@@ -17,14 +18,19 @@ export default ({ url }) => (
         <div className="header"> Modal Title </div>
         <div className="content">
           {" "}
-          <MemeForm url={url} />
+          <MemeForm
+            name={name}
+            url={url}
+            handleClick={handleClick}
+            addMemesToState={addMemesToState}
+          />
         </div>
         <div className="actions">
           <button
             className="button"
             onClick={() => {
-              console.log("modal closed ")
-              close()
+              console.log("modal closed ");
+              close();
             }}
           >
             close modal
@@ -33,4 +39,4 @@ export default ({ url }) => (
       </div>
     )}
   </Popup>
-)
+);

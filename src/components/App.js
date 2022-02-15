@@ -1,34 +1,38 @@
-import React, { useState, useEffect } from "react"
-import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom"
-import Search from "./Search"
-import MemeContainer from "./MemeContainer"
-import NavBar from "./NavBar"
-import MyMemes from "./MyMemes"
-import Directions from "./Directions"
-import MemeForm from "./MemeForm"
+import React, { useState, useEffect } from "react";
+import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom";
+import Search from "./Search";
+import MemeContainer from "./MemeContainer";
+import NavBar from "./NavBar";
+import MyMemes from "./MyMemes";
+import Directions from "./Directions";
+import MemeForm from "./MemeForm";
 
-import Footer from "./Footer.js"
+import Footer from "./Footer.js";
 
 function App() {
-  const [memes, setMemes] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
+  const [memes, setMemes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [myMemes, setMyMemes] = useState([]);
 
   const filteredMemeTitles = memes.filter((meme) =>
     meme.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  );
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
-      .then((response) => setMemes(response.data.memes))
-  }, [])
+      .then((response) => setMemes(response.data.memes));
+  }, []);
 
-  function openForm(id) {
-    return
-  }
+  useEffect(() => {
+    fetch("http://localhost:6001/NewMemes")
+      .then((response) => response.json())
+      .then(setMyMemes);
+  }, []);
 
-  function hello() {
-    console.log("hello")
+  function addMemesToState(memeObj) {
+    const updatedArray = [...myMemes, memeObj];
+    return setMyMemes(updatedArray);
   }
 
   return (
@@ -44,11 +48,14 @@ function App() {
         </nav>
         <Switch>
           <Route path="/mymemes">
-            <MyMemes />
+            <MyMemes myMemes={myMemes} />
           </Route>
           <Route exact path="/">
             <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-            <MemeContainer hello={hello} memes={filteredMemeTitles} />
+            <MemeContainer
+              memes={filteredMemeTitles}
+              addMemesToState={addMemesToState}
+            />
             {/* <Home /> */}
           </Route>
           <Route path="/directions">
@@ -59,7 +66,7 @@ function App() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

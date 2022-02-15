@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function Directions() {
   return (
@@ -26,7 +26,7 @@ function Directions() {
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default Directions
+export default Directions;

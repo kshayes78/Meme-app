@@ -1,28 +1,3 @@
 {
-  "MyMemes": [
-    {
-      "name": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "a",
-      "bottomText": "b",
-      "id": 1
-    },
-    {
-      "name": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "c",
-      "bottomText": "c",
-      "id": 2
-    },
-    {
-      "name": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "",
-      "bottomText": "",
-      "id": 3
-    },
-    {
-      "name": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "a",
-      "bottomText": "b",
-      "id": 4
-    }
-  ]
+  "NewMemes": []
 }

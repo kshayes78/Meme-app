@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react"
+import React from "react";
+import MemeCard from "./MemeCard";
 
-function MyMemes() {
-  const [myMemes, setMyMemes] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:6001/MyMemes")
-      .then((response) => response.json())
-      .then(setMyMemes)
-  }, [])
-
-  return (
-    <div>
-      <h1>My Memes</h1>
-    </div>
-  )
+function MyMemes({ myMemes }) {
+  console.log(myMemes);
+  const createMemeCards = myMemes.map((meme) => (
+    <MemeCard
+      key={meme.id}
+      name={meme.name}
+      url={meme.url}
+      topText={meme.topText}
+      bottomText={meme.bottomText}
+    />
+  ));
+  return <div>{createMemeCards}</div>;
 }
 
-export default MyMemes
+export default MyMemes;

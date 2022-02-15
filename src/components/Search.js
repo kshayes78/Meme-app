@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function Search({ searchTerm, setSearchTerm }) {
   return (
@@ -12,7 +12,7 @@ function Search({ searchTerm, setSearchTerm }) {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

@@ -1,23 +1,26 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-function MemeForm({ url, memes }) {
-  const [topText, setTopText] = useState("")
-  const [bottomText, setBottomText] = useState("")
+function MemeForm({ url, memes, name, handleClick, addMemesToState }) {
+  const [topText, setTopText] = useState("");
+  const [bottomText, setBottomText] = useState("");
 
   const myMemeObj = {
-    name: url,
+    name: name,
+    url: url,
     topText: topText,
     bottomText: bottomText,
-  }
+  };
+  console.log(url);
 
   function handleSubmit(e) {
-    e.preventDefault()
-
+    e.preventDefault();
+    handleClick();
+    addMemesToState(myMemeObj);
     fetch("http://localhost:6001/MyMemes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(myMemeObj),
-    }).then((response) => response.json())
+    }).then((response) => response.json());
   }
 
   return (
@@ -40,7 +43,7 @@ function MemeForm({ url, memes }) {
         <input type="submit" value="Generate Meme" />
       </form>
     </div>
-  )
+  );
 }
 
-export default MemeForm
+export default MemeForm;

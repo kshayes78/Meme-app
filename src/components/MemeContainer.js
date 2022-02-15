@@ -1,10 +1,7 @@
-import React from "react"
-import MemeCard from "./MemeCard"
+import React from "react";
+import MemeCard from "./MemeCard";
 
-function MemeContainer({ hello, filteredMemeTitles, memes }) {
-  function handleClick() {
-    hello()
-  }
+function MemeContainer({ hello, filteredMemeTitles, memes, addMemesToState }) {
   const createMemeCards = memes.map((meme) => (
     <MemeCard
       key={meme.id}
@@ -13,10 +10,10 @@ function MemeContainer({ hello, filteredMemeTitles, memes }) {
       width={meme.width}
       height={meme.height}
       box_count={meme.box_count}
-      hello={hello}
+      addMemestoState={addMemesToState}
     />
-  ))
-  return <div>{createMemeCards}</div>
+  ));
+  return <div>{createMemeCards}</div>;
 }
 
-export default MemeContainer
+export default MemeContainer;
