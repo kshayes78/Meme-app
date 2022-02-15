@@ -1,3 +1,18 @@
 {
-  "NewMemes": []
+  "NewMemes": [
+    {
+      "name": "Drake Hotline Bling",
+      "url": "https://i.imgflip.com/30b1gx.jpg",
+      "topText": "",
+      "bottomText": "",
+      "id": 1
+    },
+    {
+      "name": "Two Buttons",
+      "url": "https://i.imgflip.com/1g8my4.jpg",
+      "topText": "what",
+      "bottomText": "even",
+      "id": 2
+    }
+  ]
 }
