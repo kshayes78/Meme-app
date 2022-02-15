@@ -1,51 +1,14 @@
 {
   "NewMemes": [
     {
-      "name": "Drake Hotline Bling",
-      "url": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "",
-      "bottomText": "",
+      "name": "Running Away Balloon",
+      "url": "https://i.imgflip.com/65d9bg.jpg",
       "id": 1
     },
     {
-      "name": "Two Buttons",
-      "url": "https://i.imgflip.com/1g8my4.jpg",
-      "topText": "what",
-      "bottomText": "even",
+      "name": "Buff Doge vs. Cheems",
+      "url": "https://i.imgflip.com/65d9cs.jpg",
       "id": 2
-    },
-    {
-      "name": "Drake Hotline Bling",
-      "url": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "a",
-      "bottomText": "b",
-      "id": 3
-    },
-    {
-      "name": "Drake Hotline Bling",
-      "url": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "a",
-      "bottomText": "b",
-      "id": 4
-    },
-    {
-      "name": "Drake Hotline Bling",
-      "url": "https://i.imgflip.com/30b1gx.jpg",
-      "topText": "a",
-      "bottomText": "b",
-      "id": 5
-    },
-    {
-      "name": "Drake Hotline Bling",
-      "id": 6
-    },
-    {
-      "name": "Distracted Boyfriend",
-      "id": 7
-    },
-    {
-      "name": "Distracted Boyfriend",
-      "id": 8
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import MemeCard from "./MemeCard"
 
-function MemeContainer({ hello, filteredMemeTitles, memes, addMemesToState }) {
+function MemeContainer({ memes, addMemesToState }) {
   const createMemeCards = memes.map((meme) => (
     <MemeCard
       key={meme.id}

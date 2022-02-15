@@ -3,6 +3,7 @@ import React, { useState } from "react"
 function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
   const [topText, setTopText] = useState("")
   const [bottomText, setBottomText] = useState("")
+  const [captionedMeme, setCaptionedMeme] = useState("")
 
   const user = "nicolecandiotti"
   const password = "ReactProject"
@@ -39,14 +40,13 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
       }
     )
       .then((r) => r.json())
-      .then((data) => console.log(data.data.url))
       .then((data) => {
         fetch("http://localhost:6001/NewMemes", {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({
             name: name,
-            url: data.url,
+            url: data.data.url,
           }),
         })
           .then((r) => r.json())

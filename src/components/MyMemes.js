@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import MyMemesContainer from "./MyMemesContainer"
 
 function MyMemes({ setMyMemesArray }) {
   const [myMemes, setMyMemes] = useState([])
@@ -8,10 +9,9 @@ function MyMemes({ setMyMemesArray }) {
       .then((response) => response.json())
       .then(setMyMemes)
   }, [])
-
   return (
     <div>
-      <h1>My Memes</h1>
+      <MyMemesContainer myMemes={myMemes} />
     </div>
   )
 }
