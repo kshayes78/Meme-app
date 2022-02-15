@@ -30,6 +30,7 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
       username: user,
       password: password,
     }
+
     // console.log(objectToQueryParam(params))
     fetch(
       `https://api.imgflip.com/caption_image${objectToQueryParam(params)}`,
@@ -38,7 +39,19 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
       }
     )
       .then((r) => r.json())
+      .then((data) => console.log(data.data.url))
       .then((data) => {
+        fetch("http://localhost:6001/NewMemes", {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            name: name,
+            url: data.url,
+          }),
+        })
+          .then((r) => r.json())
+          .then((data) => console.log(data))
+
         // send post request to json server
         // name: name
         // url: data.url
