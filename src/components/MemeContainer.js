@@ -1,7 +1,7 @@
-import React from "react";
-import MemeCard from "./MemeCard";
-import { StyledMemes } from "./Styles/MemeContainer.styled";
-import { StyledMemeCards } from "./Styles/Memes.styled";
+import React from "react"
+import MemeCard from "./MemeCard"
+import { StyledMemes } from "./Styles/MemeContainer.styled"
+import { StyledMemeCards } from "./Styles/Memes.styled"
 
 function MemeContainer({ memes, addMemesToState }) {
   const createMemeCards = memes.map((meme) => (
@@ -17,14 +17,14 @@ function MemeContainer({ memes, addMemesToState }) {
         memes={memes}
       />
     </div>
-  ));
+  ))
   return (
     // <StyledMemes>
-    <StyledMemeCards>
-      <div>{createMemeCards}</div>
-    </StyledMemeCards>
+    // <StyledMemes>
+    <div>{createMemeCards}</div>
     // </StyledMemes>
-  );
+    // </StyledMemes>
+  )
 }
 
-export default MemeContainer;
+export default MemeContainer

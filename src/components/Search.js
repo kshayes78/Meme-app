@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledSearch } from "./Styles/Search.styled";
+import React from "react"
+import { StyledSearch } from "./Styles/Search.styled"
 
 function Search({ searchTerm, setSearchTerm }) {
   return (
@@ -18,7 +18,7 @@ function Search({ searchTerm, setSearchTerm }) {
         />
       </div>
     </StyledSearch>
-  );
+  )
 }
 
-export default Search;
+export default Search
