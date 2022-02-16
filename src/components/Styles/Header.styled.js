@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.header};
@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
 
   a {
     text-decoration: none;
-    color: red;
+    color: white;
     padding: 20px;
   }
-`
+`;
