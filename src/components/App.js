@@ -17,7 +17,7 @@ import { StyledMyMemeContainer } from "./Styles/MyMemeContainer.styled"
 
 const theme = {
   colors: {
-    header: "#2C394B",
+    header: "#FDEFF4",
     color: "#FFFFFF",
     body: "#fff",
     footer: "#003333",
