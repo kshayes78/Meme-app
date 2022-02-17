@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import Popup from "./Popup";
-// import { StyledMemeCards } from "./Styles/Memes.styled";
+import React, { useState } from "react"
+import Popup from "./Popup"
 
 function MemeCard({
   id,
@@ -12,10 +11,10 @@ function MemeCard({
   addMemesToState,
   memes,
 }) {
-  const [popUp, setPopUp] = useState(false);
+  const [popUp, setPopUp] = useState(false)
 
   function handleClick() {
-    setPopUp((popUp) => !popUp);
+    setPopUp((popUp) => !popUp)
   }
 
   return (
@@ -36,7 +35,7 @@ function MemeCard({
       ) : null}
     </div>
     // </StyledMemeCards>
-  );
+  )
 }
 
-export default MemeCard;
+export default MemeCard

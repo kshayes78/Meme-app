@@ -1,25 +1,23 @@
 import styled from "styled-components"
 
-export const StyledMyMemeContainer = styled.div`
+export const MyMemeGrid = styled.div`
+  color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 8px;
+  grid-gap: 20px;
+  row-gap: 40px;
   max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+  width: 80%;
+  margin: auto;
+  background-color: black;
 
-  @include bp(x-small) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  @include bp(small) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  // When above our large breakpoint, make sure we have 3 columns
-  @include bp(large) {
-    grid-template-columns: repeat(3, 1fr);
-  }
   img {
-    width: 100%;
-    border: 5px solid #fff;
+    box-shadow: 0px 10px 15px black;
+    border: 5px solid white;
+    padding: 5px 5px;
+  }
+  img:hover {
+    opacity: 50%;
+    transition: 0.3s opacity ease;
   }
 `

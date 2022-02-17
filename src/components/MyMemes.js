@@ -10,9 +10,9 @@ function MyMemes({ setMyMemesArray }) {
       .then(setMyMemes)
   }, [])
   return (
-    <div>
+    <>
       <MyMemesContainer myMemes={myMemes} />
-    </div>
+    </>
   )
 }
 

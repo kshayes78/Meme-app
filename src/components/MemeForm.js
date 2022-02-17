@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { StyledForm } from "./Styles/Popup.styled"
+import { StyledInput } from "./Styles/Popup.styled"
 
 function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
   const [topText, setTopText] = useState("")
@@ -51,41 +53,68 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
         })
           .then((r) => r.json())
           .then((data) => console.log(data))
-
-        // send post request to json server
-        // name: name
-        // url: data.url
       })
   }
 
-  //   fetch("http://localhost:6001/NewMemes", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(myMemeObj),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data))
-  // }
-
   return (
     <div>
-      <h3>Add a Meme!</h3>
-      <form onSubmit={handleSubmit}>
-        <img height="100px" width="100px" src={url} />
-        {/* <label>Add Top Caption</label> */}
-        <input
-          placeholder="Add Top Caption"
-          value={topText}
-          onChange={(e) => setTopText(e.target.value)}
-        />
-        {/* <label>Add Bottom Caption</label> */}
-        <input
-          placeholder="Add Bottom Caption"
-          value={bottomText}
-          onChange={(e) => setBottomText(e.target.value)}
-        />
-        <input type="submit" value="Generate Meme" />
-      </form>
+      <h3>
+        <em>Add a Custom Caption to this Meme!</em>
+      </h3>
+      <StyledForm>
+        <div className="captionBtn">
+          <input
+            style={{
+              backgroundColor: "white",
+              borderRadius: "10px",
+              margin: "10px",
+              padding: "8px",
+              color: "#e94560",
+              fontWeight: "bold",
+            }}
+            type="submit"
+            value="Generate Meme"
+          />
+        </div>
+        <form onSubmit={handleSubmit}>
+          <img
+            style={{ border: "10px solid black" }}
+            height="100px"
+            width="100px"
+            src={url}
+          />
+          <div className="captions">
+            <input
+              className="input1"
+              placeholder="Add Top Caption"
+              value={topText}
+              onChange={(e) => setTopText(e.target.value)}
+              style={{
+                backgroundColor: "white",
+                borderRadius: "10px",
+                margin: "10px",
+                padding: "8px",
+                color: "#e94560",
+                fontWeight: "bold",
+              }}
+            />
+            <input
+              className="input2"
+              placeholder="Add Bottom Caption"
+              value={bottomText}
+              onChange={(e) => setBottomText(e.target.value)}
+              style={{
+                backgroundColor: "white",
+                borderRadius: "10px",
+                margin: "10px",
+                padding: "8px",
+                color: "#e94560",
+                fontWeight: "bold",
+              }}
+            />
+          </div>
+        </form>
+      </StyledForm>
     </div>
   )
 }

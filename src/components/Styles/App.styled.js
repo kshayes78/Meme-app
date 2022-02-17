@@ -1,9 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
+// import brickwall from "./images/brickwall.jpg"
 
-export const StyledApp = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-`;
+export const Container = styled.div`
+  background: url("./images/hero2.png") black;
+  margin-bottom: 20px;
+`
