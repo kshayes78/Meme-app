@@ -1,15 +1,18 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap");
   margin-bottom: 100px;
   height: 260px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 
   .logo {
     /* display: flex; */
     /* display: inline-block; */
-    height: 350px;
-    width: 600px;
+    height: 500px;
+    width: 700px;
     /* position: relative; */
     align-self: center;
     top: 0%;
@@ -29,9 +32,10 @@ export const StyledHeader = styled.header`
   }
 
   a {
+    font-size: 40px;
     text-decoration: none;
     color: #fff;
-    padding: 40px;
+    padding: 30px;
     display: inline-block;
     position: static;
     top: 0%;
@@ -63,4 +67,4 @@ export const StyledHeader = styled.header`
   img:hover {
     box-shadow: none;
   }
-`
+`;

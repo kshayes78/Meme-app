@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from "react"
-import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom"
-import Search from "./Search"
-import MemeContainer from "./MemeContainer"
+import React, { useState, useEffect } from "react";
+import { Route, Switch, NavLink, BrowserRouter } from "react-router-dom";
+import Search from "./Search";
+import MemeContainer from "./MemeContainer";
 
-import MyMemes from "./MyMemes"
-import Directions from "./Directions"
+import MyMemes from "./MyMemes";
+import Directions from "./Directions";
 
-import Footer from "./Footer.js"
-import { StyledHeader } from "./Styles/Header.styled"
-import { MemeGrid } from "./Styles/MemeContainer.styled"
+import Footer from "./Footer.js";
+import { StyledHeader } from "./Styles/Header.styled";
+import { MemeGrid } from "./Styles/MemeContainer.styled";
 
-import youcandoit from "./images/youcandoit.PNG"
-import { Container } from "./Styles/App.styled"
-import hero2 from "./images/hero2.png"
+import { Container } from "./Styles/App.styled";
+import hero2 from "./images/hero2.png";
+import brickwall from "./images/brickwall.jpg";
 
 function App() {
-  const [memes, setMemes] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [myMemesArray, setMyMemesArray] = useState([])
+  const [memes, setMemes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [myMemesArray, setMyMemesArray] = useState([]);
 
   const filteredMemeTitles = memes.filter((meme) =>
     meme.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  );
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
-      .then((response) => setMemes(response.data.memes))
-  }, [])
+      .then((response) => setMemes(response.data.memes));
+  }, []);
 
   function addMemesToState(memeObj) {
-    setMyMemesArray([...myMemesArray, memeObj])
+    setMyMemesArray([...myMemesArray, memeObj]);
   }
 
   return (
@@ -45,11 +45,9 @@ function App() {
                 className="logo"
                 style={{ height: "200px" }}
                 src={hero2}
-                alt="hero image"
+                alt="hero"
               />
-              {/* <h1>
-                👑 <em>Queen</em> of Memes 👑
-              </h1> */}
+
               <h2>
                 <NavLink style={{ textDecoration: "none" }} exact to="/">
                   Home
@@ -86,11 +84,12 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
+        <div class="bg_image"></div>
 
         <Footer />
       </>
     </Container>
-  )
+  );
 }
 
-export default App
+export default App;

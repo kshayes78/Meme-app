@@ -1,20 +1,12 @@
-import React from "react"
-import Popup from "reactjs-popup"
-import MemeForm from "./MemeForm"
-import { StyledPopup } from "./Styles/Popup.styled"
-import { StyledForm } from "./Styles/Popup.styled"
-import { Container } from "./Styles/App.styled"
+import React from "react";
+import Popup from "reactjs-popup";
+import MemeForm from "./MemeForm";
+import { StyledPopup } from "./Styles/Popup.styled";
+import { StyledForm } from "./Styles/Popup.styled";
+import { Container } from "./Styles/App.styled";
 
 export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
-  <Container
-    style={
-      {
-        // padding: "40px 40px",
-        // borderRadius: "20px",
-        // border: "1px solid",
-      }
-    }
-  >
+  <Container>
     <StyledPopup>
       <>
         <Popup
@@ -25,10 +17,10 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
           {(close) => (
             <div
               style={{
-                backgroundColor: "white",
+                backgroundColor: "dark gray",
                 padding: "40px 40px",
                 borderRadius: "20px",
-                // border: "1px solid",
+
                 borderStyle: "dotted",
                 backdropFilter: "blur(3px)",
               }}
@@ -68,4 +60,4 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
       </>
     </StyledPopup>
   </Container>
-)
+);

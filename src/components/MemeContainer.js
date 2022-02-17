@@ -1,6 +1,6 @@
-import React from "react"
-import MemeCard from "./MemeCard"
-import { MyMemeGrid } from "./Styles/MyMemeContainer.styled"
+import React from "react";
+import MemeCard from "./MemeCard";
+import { MyMemeGrid } from "./Styles/MyMemeContainer.styled";
 
 function MemeContainer({ memes, addMemesToState }) {
   const createMemeCards = memes.map((meme) => (
@@ -14,12 +14,12 @@ function MemeContainer({ memes, addMemesToState }) {
       addMemestoState={addMemesToState}
       memes={memes}
     />
-  ))
+  ));
   return (
     <MyMemeGrid>
       <>{createMemeCards}</>
     </MyMemeGrid>
-  )
+  );
 }
 
-export default MemeContainer
+export default MemeContainer;

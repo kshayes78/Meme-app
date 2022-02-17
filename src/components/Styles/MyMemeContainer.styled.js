@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const MyMemeGrid = styled.div`
   color: white;
@@ -9,7 +9,7 @@ export const MyMemeGrid = styled.div`
   max-width: 1200px;
   width: 80%;
   margin: auto;
-  background-color: black;
+  /* background-color: black; */
 
   img {
     box-shadow: 0px 10px 15px black;
@@ -20,4 +20,4 @@ export const MyMemeGrid = styled.div`
     opacity: 50%;
     transition: 0.3s opacity ease;
   }
-`
+`;

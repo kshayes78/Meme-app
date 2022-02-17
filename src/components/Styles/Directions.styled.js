@@ -1,6 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledDirections = styled.div`
+  padding-left: 40px;
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,4 +23,4 @@ export const StyledDirections = styled.div`
     text-decoration: none;
     color: #86c6f4;
   }
-`
+`;

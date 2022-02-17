@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledPopup = styled.div`
   background-color: black;
@@ -12,7 +12,7 @@ export const StyledPopup = styled.div`
     color: #d70608;
     font-weight: bold;
   }
-`
+`;
 
 export const StyledForm = styled.form`
   color: red;
@@ -25,7 +25,7 @@ export const StyledForm = styled.form`
   grid-row-gap: 0px;
   max-height: 400px;
   max-width: 600px;
-  padding: 30px 20px;
+  padding: 40px 30px;
   border-radius: 20px;
 
   img {
@@ -47,4 +47,4 @@ export const StyledForm = styled.form`
   /* input {
     display: grid;
     grid-area: 1 / 3 / 2 / 4; */
-`
+`;
