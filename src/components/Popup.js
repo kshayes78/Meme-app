@@ -17,7 +17,6 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
           {(close) => (
             <div
               style={{
-                backgroundColor: "dark gray",
                 padding: "100px 400px",
                 borderRadius: "20px",
 
@@ -27,6 +26,7 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
             >
               <button
                 style={{
+                  background: "black",
                   backgroundColor: "white",
                   borderRadius: "5px",
                   margin: "10px",

@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const MemeGrid = styled.div`
+  background: none;
   color: white;
   /* display: grid;
   grid-template-columns: repeat(3, 1fr); */
@@ -20,4 +21,4 @@ export const MemeGrid = styled.div`
     opacity: 50%;
     transition: 0.3s opacity ease;
   }
-`;
+`

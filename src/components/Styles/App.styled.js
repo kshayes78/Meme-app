@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 // import brickwall from "./images/brickwall.jpg"
 
 export const Container = styled.div`
@@ -8,4 +8,4 @@ export const Container = styled.div`
   background-size: 100%;
   /* background-repeat: no-repeat; */
   margin-bottom: 20px;
-`;
+`

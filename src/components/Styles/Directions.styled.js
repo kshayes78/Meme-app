@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const StyledDirections = styled.div`
   padding-left: 40px;
@@ -9,9 +9,6 @@ export const StyledDirections = styled.div`
   grid-column-gap: 24px;
   grid-row-gap: 0px;
 
-  h1 {
-    grid-area: 1 / 1 / 2 / 4;
-  }
   h1,
   h3 {
     color: #d70608;
@@ -21,6 +18,6 @@ export const StyledDirections = styled.div`
   }
   a:visited {
     text-decoration: none;
-    color: #86c6f4;
+    color: #ff0000;
   }
-`;
+`

@@ -57,7 +57,13 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "black",
+        padding: "40px 40px",
+        borderRadius: "20px",
+      }}
+    >
       <h3 style={{ color: "white" }}>
         <em>Add a Custom Caption to this Meme!</em>
       </h3>

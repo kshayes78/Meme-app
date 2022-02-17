@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const StyledSearch = styled.div`
   color: white;
@@ -11,7 +11,7 @@ export const StyledSearch = styled.div`
   input {
     border: 1px solid;
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
     padding: 15px;
     margin: 10px;
   }
@@ -19,4 +19,4 @@ export const StyledSearch = styled.div`
     border: 5px solid #d70608;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   }
-`;
+`

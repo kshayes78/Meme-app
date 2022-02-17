@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const StyledPopup = styled.div`
-  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  /* opacity: 0; */
 
   button {
     @import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Raleway:wght@300&display=swap");
