@@ -14,7 +14,7 @@ export const StyledPopup = styled.div`
   }
 `
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.div`
   color: red;
   background: linear-gradient(110deg, #393e46 60%, #222831 60%);
   /* padding: 40px 40px; */

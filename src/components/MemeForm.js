@@ -62,20 +62,6 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
         <em>Add a Custom Caption to this Meme!</em>
       </h3>
       <StyledForm>
-        <div className="captionBtn">
-          <input
-            style={{
-              backgroundColor: "white",
-              borderRadius: "10px",
-              margin: "10px",
-              padding: "8px",
-              color: "#e94560",
-              fontWeight: "bold",
-            }}
-            type="submit"
-            value="Generate Meme"
-          />
-        </div>
         <form onSubmit={handleSubmit}>
           <img
             style={{ border: "10px solid black" }}
@@ -111,6 +97,20 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
                 color: "#e94560",
                 fontWeight: "bold",
               }}
+            />
+          </div>
+          <div className="captionBtn">
+            <input
+              style={{
+                backgroundColor: "white",
+                borderRadius: "10px",
+                margin: "10px",
+                padding: "8px",
+                color: "#e94560",
+                fontWeight: "bold",
+              }}
+              type="submit"
+              value="Generate Meme"
             />
           </div>
         </form>
