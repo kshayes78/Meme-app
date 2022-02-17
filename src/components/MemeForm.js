@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { StyledForm } from "./Styles/Popup.styled";
-import { StyledInput } from "./Styles/Popup.styled";
+import React, { useState } from "react"
+import { StyledForm } from "./Styles/Popup.styled"
+import { StyledInput } from "./Styles/Popup.styled"
 
 function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
-  const [topText, setTopText] = useState("");
-  const [bottomText, setBottomText] = useState("");
-  const [captionedMeme, setCaptionedMeme] = useState("");
+  const [topText, setTopText] = useState("")
+  const [bottomText, setBottomText] = useState("")
+  const [captionedMeme, setCaptionedMeme] = useState("")
 
-  const user = "nicolecandiotti";
-  const password = "ReactProject";
+  const user = "nicolecandiotti"
+  const password = "ReactProject"
 
   const objectToQueryParam = (obj) => {
-    const params = Object.entries(obj).map(([key, value]) => `${key}=${value}`);
-    return "?" + params.join(`&`);
-  };
+    const params = Object.entries(obj).map(([key, value]) => `${key}=${value}`)
+    return "?" + params.join(`&`)
+  }
 
   // const myMemeObj = {
   //   name: name,
@@ -23,8 +23,8 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
   // }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    handleClick();
+    e.preventDefault()
+    handleClick()
     // addMemesToState(myMemeObj)
     const params = {
       template_id: id,
@@ -32,7 +32,7 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
       text1: bottomText,
       username: user,
       password: password,
-    };
+    }
 
     // console.log(objectToQueryParam(params))
     fetch(
@@ -52,8 +52,8 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
           }),
         })
           .then((r) => r.json())
-          .then((data) => console.log(data));
-      });
+          .then((data) => console.log(data))
+      })
   }
 
   return (
@@ -116,7 +116,7 @@ function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
         </form>
       </StyledForm>
     </div>
-  );
+  )
 }
 
-export default MemeForm;
+export default MemeForm

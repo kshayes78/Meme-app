@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const StyledPopup = styled.div`
   background-color: black;
@@ -12,7 +12,7 @@ export const StyledPopup = styled.div`
     color: #d70608;
     font-weight: bold;
   }
-`;
+`
 
 export const StyledForm = styled.form`
   color: red;
@@ -47,4 +47,4 @@ export const StyledForm = styled.form`
   /* input {
     display: grid;
     grid-area: 1 / 3 / 2 / 4; */
-`;
+`

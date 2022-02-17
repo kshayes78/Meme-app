@@ -1,9 +1,9 @@
-import React from "react";
-import Popup from "reactjs-popup";
-import MemeForm from "./MemeForm";
-import { StyledPopup } from "./Styles/Popup.styled";
-import { StyledForm } from "./Styles/Popup.styled";
-import { Container } from "./Styles/App.styled";
+import React from "react"
+import Popup from "reactjs-popup"
+import MemeForm from "./MemeForm"
+import { StyledPopup } from "./Styles/Popup.styled"
+import { StyledForm } from "./Styles/Popup.styled"
+import { Container } from "./Styles/App.styled"
 
 export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
   <Container>
@@ -18,10 +18,9 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
             <div
               style={{
                 backgroundColor: "dark gray",
-                padding: "40px 40px",
+                padding: "100px 400px",
                 borderRadius: "20px",
 
-                borderStyle: "dotted",
                 backdropFilter: "blur(3px)",
               }}
               className="modal"
@@ -60,4 +59,4 @@ export default ({ id, url, name, handleClick, addMemesToState, memes }) => (
       </>
     </StyledPopup>
   </Container>
-);
+)
