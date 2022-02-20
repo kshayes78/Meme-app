@@ -3,7 +3,7 @@
 ## Demonstrated Skills
 - pair programming
 - Create React App
-- Wire framing (see hierarchy.drawio
+- Wire framing (see hierarchy.drawio)
 - JSX and fragments
 - React functional components - named and default imports/exports
 - React hooks (useEffect and useState)
