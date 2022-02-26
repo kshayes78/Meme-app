@@ -2,7 +2,6 @@ import React from "react"
 import Popup from "reactjs-popup"
 import MemeForm from "./MemeForm"
 import { StyledPopup } from "./Styles/Popup.styled"
-import { StyledForm } from "./Styles/Popup.styled"
 import { Container } from "./Styles/App.styled"
 
 export default ({ id, url, name, handleClick, addMemesToState, memes }) => (

@@ -1,40 +1,27 @@
 import React, { useState } from "react"
 import { StyledForm } from "./Styles/Popup.styled"
-import { StyledInput } from "./Styles/Popup.styled"
 
-function MemeForm({ id, url, memes, name, handleClick, addMemesToState }) {
+function MemeForm({ id, url, memes, name, handleClick }) {
   const [topText, setTopText] = useState("")
   const [bottomText, setBottomText] = useState("")
-  const [captionedMeme, setCaptionedMeme] = useState("")
-
-  const user = "nicolecandiotti"
-  const password = "ReactProject"
 
   const objectToQueryParam = (obj) => {
     const params = Object.entries(obj).map(([key, value]) => `${key}=${value}`)
     return "?" + params.join(`&`)
   }
 
-  // const myMemeObj = {
-  //   name: name,
-  //   url: url,
-  //   topText: { topText },
-  //   bottomText: { bottomText },
-  // }
-
   function handleSubmit(e) {
     e.preventDefault()
     handleClick()
-    // addMemesToState(myMemeObj)
+
     const params = {
       template_id: id,
       text0: topText,
       text1: bottomText,
-      username: user,
-      password: password,
+      username: process.env.REACT_APP_USERNAME,
+      password: process.env.REACT_APP_PASSWORD,
     }
 
-    // console.log(objectToQueryParam(params))
     fetch(
       `https://api.imgflip.com/caption_image${objectToQueryParam(params)}`,
       {

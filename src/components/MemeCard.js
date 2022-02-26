@@ -1,16 +1,7 @@
 import React, { useState } from "react"
 import Popup from "./Popup"
 
-function MemeCard({
-  id,
-  hello,
-  name,
-  url,
-  height,
-  width,
-  addMemesToState,
-  memes,
-}) {
+function MemeCard({ id, hello, name, url, addMemesToState, memes }) {
   const [popUp, setPopUp] = useState(false)
 
   function handleClick() {
@@ -18,7 +9,6 @@ function MemeCard({
   }
 
   return (
-    // <StyledMemeCards>
     <div onClick={handleClick}>
       <h3>{name}</h3>
       <img height="200px" width="200px" src={url} alt={name} />
@@ -34,7 +24,6 @@ function MemeCard({
         />
       ) : null}
     </div>
-    // </StyledMemeCards>
   )
 }
 
